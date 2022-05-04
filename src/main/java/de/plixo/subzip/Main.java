@@ -8,7 +8,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -65,7 +64,8 @@ public class Main {
             });
             Thread.sleep(3000);
             delayedFunctions.forEach(Runnable::run);
-            System.out.println("done zipping " + foldersZipped.intValue() + " folder" + (foldersZipped.intValue() > 1 ? "s" : ""));
+            System.out.println("done zipping " + foldersZipped.intValue() + " folder" + (foldersZipped
+                    .intValue() > 1 ? "s" : ""));
         } catch (final Exception exception) {
             exception.printStackTrace();
             JOptionPane.showMessageDialog(null,
@@ -78,7 +78,7 @@ public class Main {
     /**
      * modified, see https://stackoverflow.com/a/32052016/14902251
      *
-     * @param inPath source folder
+     * @param inPath  source folder
      * @param outPath destination zip folder
      * @throws IOException for access and file name exceptions
      */
